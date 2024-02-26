@@ -1,10 +1,22 @@
-
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Footer = () => {
     return(
-        <div>
-             <h1>This is a footer</h1>
-        </div>
+        <footer className = "border-t">
+             <div className = "flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row ">
+                 <Link href = "/">
+                    <Image 
+                    src = "/assets/images/logo.svg"
+                    alt = "Logo"
+                    width = {128}
+                    height = {38}
+                    />  
+                </Link> 
+                <p>2023 Evento Express. All right reserved.</p>  
+
+            </div>
+        </footer>
     )
 }
 
