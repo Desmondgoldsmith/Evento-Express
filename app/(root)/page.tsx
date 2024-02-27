@@ -11,15 +11,28 @@ export default function Home() {
             <h1 className ="h1-bold">
               Host, connect , celebrate: Your Events, Our Platform!
             </h1>
-            <p className = "p-regular-20 md:p-10">
+            <p className = "p-regular-20 md:p-regular-24">
               Book and learn helpful tips from 3,168+ mentors in world-class companies with our global community
             </p>
             <Button size = "lg" asChild className = "button w-full sm:w-fit">
               <Link href = "#events">Explore Now</Link>
             </Button>
            </div>
-           <Image src = "/assets/images/hero.png" alt = "Hero" width = {1000} height = {1000}/>
+           <Image 
+           src = "/assets/images/hero.png" 
+           className = "max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
+           alt = "Hero" 
+           width = {1000} 
+           height = {1000}/>
           </div>
+        </section>
+
+        <section id = "events" className = "wrapper my-8 flex flex-col gap-8 md:gap-12">
+          <h1 className = "h2-bold">Trusted by <br/> Thousands of Events</h1>
+        <div className ="flex w-full flex-col gap-5 md:flex-row">
+          search
+          categoryFilter
+        </div>
         </section>
     </>
   );
