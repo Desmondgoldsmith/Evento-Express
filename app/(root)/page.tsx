@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,7 +14,11 @@ export default function Home() {
             <p className = "p-regular-20 md:p-10">
               Book and learn helpful tips from 3,168+ mentors in world-class companies with our global community
             </p>
+            <Button size = "lg" asChild className = "button w-full sm:w-fit">
+              <Link href = "#events">Explore Now</Link>
+            </Button>
            </div>
+           <Image src = "/assets/images/hero.png" alt = "Hero" width = {1000} height = {1000}/>
           </div>
         </section>
     </>
