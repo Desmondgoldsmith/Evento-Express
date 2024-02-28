@@ -1,4 +1,21 @@
-import {Schema} from 'mongoose'
+import {Schema, model , models, Document} from 'mongoose'
+
+export interface IEvent extends Document{
+    _id: string,
+    title: string,
+    description?: string,
+    location?: string,
+    createdAt : Date,
+    imageUrl : Date,
+    startDateTime ?: string,
+    endDateTime : Date,
+    price?: string,
+    isFree: boolean,
+    url?: string,
+    category: {_id: string, name: string},
+    organizer: {_id: string, firstName: string, lastName : string}
+    
+}
 
 const EventSchema = new Schema({
     title: {type: String, required: true},
@@ -11,6 +28,10 @@ const EventSchema = new Schema({
     price: {type:String},
     isFree: {type: Boolean , default: false},
     url: {type: String},
-    category: {type: Schema.Types.ObjectId,ref:'category'},
+    category: {type: Schema.Types.ObjectId,ref:'Category'}, // referenced to the category model in the db
+    organizer: {type: Schema.Types.ObjectId,ref:'User'}, // referenced to the User model in the db
     
 })
+
+const Event = models.Event || model('Event', EventSchema)
+export default Event
