@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, models , model } from "mongoose";
 
 export interface ICategory extends Document{
  _id: string
@@ -7,6 +7,6 @@ export interface ICategory extends Document{
 
 const categorySchema = new Schema({
     name: {type: String, required: true, unique: true},
-      
-
 })
+
+const Category = models.Category || model('Category', CategorySchema)
