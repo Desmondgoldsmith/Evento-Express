@@ -6,6 +6,8 @@ import { handleError } from "../utils"
 import { connectToDatabase } from "../database"
 import User from "../database/Models/user.model"
 import { revalidatePath } from "next/cache"
+import Order from "../database/Models/order.models"
+import Event from "../database/Models/event.models"
 
 export const createUser = async (user:CreateUserParams) => {
  try{
